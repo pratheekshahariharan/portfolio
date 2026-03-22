@@ -1,0 +1,340 @@
+.section {
+  padding: 7rem 0;
+  background:
+    radial-gradient(circle at 15% 22%, rgba(110,231,247,0.09), transparent 24%),
+    radial-gradient(circle at 88% 78%, rgba(167,139,250,0.08), transparent 22%),
+    var(--bg2);
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 70px 70px;
+  mask-image: radial-gradient(circle at center, black 50%, transparent 100%);
+  pointer-events: none;
+  opacity: 0.32;
+}
+
+.header {
+  margin-bottom: 4rem;
+  max-width: 780px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.1rem, 4.4vw, 3.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(320px, 390px) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.bio {
+  position: sticky;
+  top: 100px;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 2rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+  border: 1px solid rgba(255,255,255,0.09);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.bioGlow {
+  position: absolute;
+  top: -80px;
+  right: -70px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(110,231,247,0.16), transparent 68%);
+  pointer-events: none;
+}
+
+.avatarWrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+
+.avatar {
+  position: relative;
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+}
+
+.avatarInner {
+  width: 84px;
+  height: 84px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2), var(--accent3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #080b12;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 16px 34px rgba(110,231,247,0.18);
+}
+
+.avatarRing {
+  position: absolute;
+  inset: -7px;
+  border-radius: 34px;
+  border: 1px solid rgba(110,231,247,0.26);
+  animation: spin 9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+}
+
+.bioName {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.bioDegree {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bioColl {
+  font-size: 0.86rem;
+  color: var(--text3);
+}
+
+.story {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.bioText {
+  font-size: 0.94rem;
+  color: var(--text2);
+  line-height: 1.85;
+}
+
+.bioChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.4rem;
+}
+
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.38rem 0.72rem;
+  background: rgba(110,231,247,0.08);
+  border: 1px solid rgba(110,231,247,0.18);
+  border-radius: 999px;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+
+.metrics {
+  margin-top: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.metric {
+  flex: 1;
+  min-width: 140px;
+  padding: 0.95rem 0.9rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.metricValue {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 3vw, 1.35rem);
+  font-weight: 800;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.metricLabel {
+  font-size: 0.73rem;
+  color: var(--text3);
+  line-height: 1.5;
+}
+
+.cards {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 1.7rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.025));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  border-color: rgba(255,255,255,0.16);
+  box-shadow: 0 18px 48px rgba(0,0,0,0.24);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.cardIcon {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--c, var(--accent));
+}
+
+.cardLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--c, var(--accent)), transparent);
+  opacity: 0.8;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.55rem;
+}
+
+.cardDesc {
+  font-size: 0.92rem;
+  color: var(--text2);
+  line-height: 1.85;
+  max-width: 58ch;
+}
+
+.timeline {
+  border-radius: 24px;
+  padding: 1.8rem;
+  border: 1px solid rgba(255,255,255,0.08);
+  background:
+    radial-gradient(circle at top right, rgba(167,139,250,0.09), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.025));
+}
+
+.timelineHead {
+  margin-bottom: 1.2rem;
+}
+
+.timelineLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.timelineTitle {
+  margin-top: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  line-height: 1.35;
+  color: var(--text);
+}
+
+.timelineList {
+  display: grid;
+  gap: 1rem;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.timelineDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 0.38rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow: 0 0 20px rgba(110,231,247,0.35);
+}
+
+.timelineItem p {
+  color: var(--text2);
+  line-height: 1.8;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bio {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 5.5rem 0;
+  }
+
+  .bio,
+  .card,
+  .timeline {
+    padding: 1.3rem;
+    border-radius: 20px;
+  }
+
+  .avatarWrap {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}

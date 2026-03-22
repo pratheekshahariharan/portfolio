@@ -1,0 +1,141 @@
+.section {
+  padding: 7rem 0;
+  background: var(--bg2);
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 80% 20%, var(--glow2), transparent);
+  pointer-events: none;
+}
+
+.header { margin-bottom: 3.5rem; }
+
+.sub {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: var(--text3);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  will-change: transform;
+}
+
+.card:hover {
+  border-color: var(--project-color);
+  box-shadow: 0 0 40px rgba(0,0,0,0.3), inset 0 0 60px rgba(0,0,0,0.1);
+}
+
+.cardGlow {
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--project-color), transparent 70%);
+  opacity: 0.08;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.card:hover .cardGlow { opacity: 0.14; }
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--project-color);
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.ghLink {
+  color: var(--text3);
+  transition: color 0.2s;
+  display: flex;
+}
+.ghLink:hover { color: var(--project-color); }
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.desc {
+  font-size: 0.855rem;
+  color: var(--text2);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text3);
+  transition: all 0.2s;
+}
+
+.card:hover .tag {
+  border-color: rgba(255,255,255,0.12);
+  color: var(--text2);
+}
+
+.cardFoot {
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+}
+
+.viewBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--project-color);
+  transition: gap 0.2s;
+}
+.viewBtn:hover { gap: 0.7rem; }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 4.5rem 0;
+  }
+}

@@ -1,0 +1,146 @@
+.section {
+  padding: 7rem 0;
+  background: var(--bg2);
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 40% 50% at 60% 40%, var(--glow), transparent);
+  pointer-events: none;
+}
+
+.header { margin-bottom: 4rem; }
+
+.timeline {
+  position: relative;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-left: 2.5rem;
+}
+
+.line {
+  position: absolute;
+  left: 9px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  transform-origin: top;
+  border-radius: 2px;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+}
+
+.node {
+  position: absolute;
+  left: -2.15rem;
+  top: 1.5rem;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 3px solid var(--bg2);
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.75rem;
+  width: 100%;
+  transition: border-color 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--edu-color, var(--accent));
+  box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(52,211,153,0.1);
+  border: 1px solid rgba(52,211,153,0.2);
+  border-radius: 100px;
+  padding: 0.25rem 0.7rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--green);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+
+.badgeDot {
+  width: 5px;
+  height: 5px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s ease infinite;
+}
+
+@keyframes pulse {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.period {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--text3);
+  margin-bottom: 0.4rem;
+}
+
+.degree {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+}
+
+.institution {
+  font-size: 0.875rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.score {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(110,231,247,0.08);
+  border: 1px solid rgba(110,231,247,0.15);
+  border-radius: 6px;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.desc {
+  font-size: 0.855rem;
+  color: var(--text2);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .section { padding: 4.5rem 0; }
+  .card { padding: 1.25rem; }
+  .timeline { padding-left: 2rem; gap: 2rem; }
+}

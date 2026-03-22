@@ -1,0 +1,140 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.2rem 0;
+  transition: all 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(8,11,18,0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--border);
+  padding: 0.8rem 0;
+}
+
+.inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.logoAccent {
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+}
+
+.link {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+}
+
+.link:hover {
+  color: var(--text);
+  background: var(--surface2);
+}
+
+.rightActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.themeToggle {
+  background: none;
+  border: none;
+  color: var(--text2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: color 0.2s, background 0.2s;
+}
+
+.themeToggle:hover {
+  color: var(--accent);
+  background: var(--surface2);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.bar, .barOpen1, .barOpen2, .barOpen3 {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+  transform-origin: center;
+}
+
+.barOpen1 { transform: translateY(7px) rotate(45deg); }
+.barOpen2 { opacity: 0; }
+.barOpen3 { transform: translateY(-7px) rotate(-45deg); }
+
+.mobile {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.mobileLink {
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.75rem 0;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  transition: color 0.2s;
+}
+
+.mobileLink:hover { color: var(--accent); }
+
+@media (max-width: 768px) {
+  .links { display: none; }
+  .burger { display: flex; }
+}

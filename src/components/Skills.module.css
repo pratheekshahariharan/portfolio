@@ -1,0 +1,122 @@
+.section {
+  padding: 7rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 20% 60%, var(--glow), transparent);
+  pointer-events: none;
+}
+
+.header {
+  margin-bottom: 3.5rem;
+}
+
+.sub {
+  font-size: 1rem;
+  color: var(--text3);
+  margin-top: 0.75rem;
+}
+
+.marqueeWrap {
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeWrap::before, .marqueeWrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marqueeWrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.marqueeWrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 0.875rem;
+  padding: 0.5rem 0;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.reverse {
+  animation: scrollReverse 25s linear infinite;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes scrollReverse {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+
+.skillCard {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.7rem 1.2rem;
+  cursor: default;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.skillCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, var(--skill-color, var(--accent)), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.skillCard:hover {
+  border-color: var(--skill-color, var(--accent));
+  box-shadow: 0 0 20px rgba(110,231,247,0.1);
+  transform: translateY(-2px);
+}
+
+.skillCard:hover::before {
+  opacity: 0.06;
+}
+
+.skillIcon {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.skillName {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text2);
+  transition: color 0.2s;
+}
+
+.skillCard:hover .skillName {
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .section { padding: 4.5rem 0; }
+}
