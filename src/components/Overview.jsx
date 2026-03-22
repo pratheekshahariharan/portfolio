@@ -25,7 +25,7 @@ const SPOKEN_LANGUAGES = [
   { lang: 'English', level: 'Fluent', color: '#38bdf8' },
   { lang: 'Malayalam', level: 'Fluent', color: '#a78bfa' },
   { lang: 'Hindi', level: 'Manageable', color: '#fb923c' },
-  { lang: 'Telugu', level: 'Beginner', color: '#6ee7f7' },
+
 ]
 
 function OverviewTiltCard({ s, i, inView }) {
@@ -116,8 +116,8 @@ export default function Overview() {
           <div className={styles.expertiseTitle}>Core Expertise</div>
           <div className={styles.expertiseGrid}>
             {EXPERTISE.map((e, i) => (
-              <motion.div 
-                key={e.area} 
+              <motion.div
+                key={e.area}
                 className={styles.expertiseItem}
                 initial={{ opacity: 0, x: -20 }}
                 animate={inView ? { opacity: 1, x: 0 } : {}}
