@@ -100,9 +100,7 @@ export default function Contact() {
 
       </div>
 
-      <footer className={styles.footer}>
-        <p>Built with React + Framer Motion · © 2025 Pratheeksha H</p>
-      </footer>
+      
     </section>
   )
 }
